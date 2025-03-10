@@ -1,0 +1,25 @@
+Entidades:
+-Persona
+-Automovil
+
+Funciones:
+1- registrar Persona
+2- registrar vehículo
+3- poner un vehículo a nombre de una persona
+4- transferir pertenencia de un vehículo de una persona a otra
+5- mostrar información de un vehículo
+	-patente
+	-marca y modelo
+	-año
+	-nombre y apellido del dueño
+	-registro de todos los dueños anteriores
+6- mostrar información de una persona
+	-nombre y apellido
+	-lista de vehículos a su nombre (si tiene)
+		-patente del vehículo
+		-marca y modelo del vehículo
+		-fecha de compra
+	-vehículos que ha tenido?
+		-patente
+		-marca y modelo
+		-fecha de compra y de venta (o tranferencia)

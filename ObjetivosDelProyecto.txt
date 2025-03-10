@@ -1,6 +1,14 @@
 Entidades:
 -Persona
+	-nombre
+	-apellido
+	-id
+	-autos(lista)
 -Automovil
+	-patente
+	-marca
+	-modelo
+	-dueños(lista)
 
 Funciones:
 1- registrar Persona

@@ -10,6 +10,9 @@ import com.mariano.personasycoches.idcustom.persona.PersonaId;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,6 +32,12 @@ public class Persona {
 	private String id;
 	private String nombre;
 	private String apellido;
+	
+	@ManyToMany
+	@JoinTable(
+			name = "persona_automovil",
+			joinColumns = @JoinColumn(name = "persona_id"),
+			inverseJoinColumns = @JoinColumn(name = "automovil_patente"))
 	private List<Automovil> vehiculos;
 
 }

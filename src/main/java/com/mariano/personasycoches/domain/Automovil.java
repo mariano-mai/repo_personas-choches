@@ -10,6 +10,7 @@ import com.mariano.personasycoches.idcustom.automovil.AutomovilId;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,6 +30,8 @@ public class Automovil {
 	private String patente;
 	private String marca;
 	private String modelo;
+	
+	@ManyToMany(mappedBy = "vehiculos")
 	private List<Persona> duenios;
 
 }

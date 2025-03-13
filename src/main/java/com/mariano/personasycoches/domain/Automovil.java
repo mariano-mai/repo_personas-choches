@@ -26,7 +26,7 @@ public class Automovil {
 	@Id
 	@AutomovilId
 	@JdbcTypeCode(SqlTypes.CHAR)
-	@Column(length = 7, columnDefinition = "varchar(7)", unique = true, nullable = false, updatable = false)
+	@Column(length = 7, columnDefinition = "varchar(10)", unique = true, nullable = false, updatable = false)
 	private String patente;
 	private String marca;
 	private String modelo;

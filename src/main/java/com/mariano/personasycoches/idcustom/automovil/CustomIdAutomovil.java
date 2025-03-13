@@ -15,16 +15,16 @@ public class CustomIdAutomovil implements IdentifierGenerator, Constantes {
 
 	@Override
 	public Object generate(SharedSessionContractImplementor session, Object object) {
-		char letra1 = letraGenerator();
-		char letra2 = letraGenerator();
-		String medio = String.format("%005d", counter++);
-		char letra3 = letraGenerator();
-		char letra4 = letraGenerator();
+		String letra1 = letraGenerator();
+		String letra2 = letraGenerator();
+		String medio = String.format("%03d", counter++);
+		String letra3 = letraGenerator();
+		String letra4 = letraGenerator();
 		return letra1+letra2+medio+letra3+letra4;
 	}
 	
-	private char letraGenerator() {
-		return LETRAS[numeroRandom(1,26)];
+	private String letraGenerator() {
+		return String.valueOf(LETRAS[numeroRandom(1,26)]);
 	}
 	
 	private int numeroRandom(int min, int max) {

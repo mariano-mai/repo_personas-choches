@@ -1,5 +1,7 @@
 package com.mariano.personasycoches.domain;
 
+import java.util.List;
+
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
@@ -9,6 +11,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,6 +32,9 @@ public class Automovil {
 	private String patente;
 	private String marca;
 	private String modelo;
+	
+	@OneToMany(mappedBy = "automovil")
+	private List<Transaccion> transacciones;
 	
 	@OneToOne
 	@JoinColumn(name = "persona_id")

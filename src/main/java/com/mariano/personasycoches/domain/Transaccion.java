@@ -18,6 +18,9 @@ public class Transaccion {
 	
 	private UUID id;
 	private LocalDate fecha;
+	
+	@ManyToOne
+	@JoinColumn(name = "automovil_patente")
 	private Automovil automovil;
 	
 	@ManyToOne

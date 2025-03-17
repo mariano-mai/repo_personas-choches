@@ -11,8 +11,8 @@ Entidades:
 	-dueños(lista)
 
 Funciones:
-1- registrar Persona
-2- registrar vehículo
+1- registrar Persona//
+2- registrar vehículo//
 3- poner un vehículo a nombre de una persona
 4- transferir pertenencia de un vehículo de una persona a otra
 5- mostrar información de un vehículo

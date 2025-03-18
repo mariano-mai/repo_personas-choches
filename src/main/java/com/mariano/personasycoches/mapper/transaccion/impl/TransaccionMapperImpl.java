@@ -16,7 +16,8 @@ public class TransaccionMapperImpl implements TransaccionMapper{
 				transaccion.getId(),
 				nombreCompleto(transaccion),
 				transaccion.getAutomovil().getPatente(),
-				transaccion.getFecha());
+				transaccion.getFecha(),
+				transaccion.getOperacion());
 	}
 	
 	private String nombreCompleto(Transaccion transaccion) {

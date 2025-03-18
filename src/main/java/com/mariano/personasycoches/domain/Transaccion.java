@@ -3,7 +3,11 @@ package com.mariano.personasycoches.domain;
 import java.time.LocalDate;
 import java.util.UUID;
 
+import com.mariano.personasycoches.enums.TipoTranEnum;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -33,5 +37,8 @@ public class Transaccion {
 	@ManyToOne
 	@JoinColumn(name = "persona_id")
 	private Persona persona;
+	
+	@Enumerated(EnumType.STRING)
+	private TipoTranEnum operacion;
 
 }

@@ -35,7 +35,6 @@ public class TransaccionController {
 		Optional<Transaccion> newTransaccion = transaccionServ.createTransaccion(transaccionCreateDto);
 		Optional<TransaccionDto> transaccionMade = Optional.of(transaccionMapper.transaccionToTransaccionDto(newTransaccion.get()));
 		personaService.addTransaccion(transaccionCreateDto.personaId(), newTransaccion.get().getId());
-		automovilService.addTransaccion(transaccionCreateDto.patente(), newTransaccion.get().getId());
 		return ResponseEntity
 				.status(HttpStatus.OK)
 				.body(transaccionMade.get());

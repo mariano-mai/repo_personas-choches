@@ -35,7 +35,7 @@ public class Persona {
 	@OneToMany(mappedBy = "persona")
 	private List<Transaccion> transacciones;
 	
-	@OneToOne(mappedBy = "duenio")
+	@OneToOne
 	private Automovil automovil;
 
 }

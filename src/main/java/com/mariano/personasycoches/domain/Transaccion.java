@@ -31,10 +31,6 @@ public class Transaccion {
 	private LocalDate fecha;
 	
 	@ManyToOne
-	@JoinColumn(name = "automovil_patente")
-	private Automovil automovil;
-	
-	@ManyToOne
 	@JoinColumn(name = "persona_id")
 	private Persona persona;
 	

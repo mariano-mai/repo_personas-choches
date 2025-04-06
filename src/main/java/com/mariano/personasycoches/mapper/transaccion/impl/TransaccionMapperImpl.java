@@ -15,13 +15,17 @@ public class TransaccionMapperImpl implements TransaccionMapper{
 		return new TransaccionDto(
 				transaccion.getId(),
 				nombreCompleto(transaccion),
-				transaccion.getAutomovil().getPatente(),
+				patenteDelAutomovil(transaccion),
 				transaccion.getFecha(),
 				transaccion.getOperacion());
 	}
 	
 	private String nombreCompleto(Transaccion transaccion) {
 		return transaccion.getPersona().getNombre()+" "+transaccion.getPersona().getApellido();
+	}
+	
+	private String patenteDelAutomovil(Transaccion transaccion) {
+		return transaccion.getPersona().getAutomovil().getPatente();
 	}
 
 }

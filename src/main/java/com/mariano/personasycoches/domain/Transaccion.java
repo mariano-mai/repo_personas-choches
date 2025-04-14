@@ -36,5 +36,7 @@ public class Transaccion {
 	
 	@Enumerated(EnumType.STRING)
 	private TipoTranEnum operacion;
+	
+	private String patente;
 
 }

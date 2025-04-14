@@ -24,17 +24,13 @@ public class TransaccionMapperImpl implements TransaccionMapper{
 		return new TransaccionDto(
 				transaccion.getId(),
 				nombreCompleto(transaccion),
-				patenteDelAutomovil(transaccion),
+				transaccion.getPatente(),
 				transaccion.getFecha(),
 				transaccion.getOperacion());
 	}
 	
 	private String nombreCompleto(Transaccion transaccion) {
 		return transaccion.getPersona().getNombre()+" "+transaccion.getPersona().getApellido();
-	}
-	
-	private String patenteDelAutomovil(Transaccion transaccion) {
-		return transaccion.getPersona().getAutomovil().getPatente();
 	}
 
 	@Override
@@ -43,6 +39,7 @@ public class TransaccionMapperImpl implements TransaccionMapper{
 		newTransaccion.setFecha(LocalDate.now());
 		newTransaccion.setPersona(personaRepo.getReferenceById(transaccionCreateDto.personaId()));
 		newTransaccion.setOperacion(transaccionCreateDto.operacion());
+		newTransaccion.setPatente(transaccionCreateDto.patente());
 		return newTransaccion;
 	}
 

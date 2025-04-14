@@ -3,7 +3,6 @@ package com.mariano.personasycoches.mapper.persona.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.mariano.personasycoches.domain.Automovil;
@@ -20,14 +19,14 @@ import com.mariano.personasycoches.mapper.persona.PersonaMapper;
 import com.mariano.personasycoches.mapper.transaccion.TransaccionMapper;
 import com.mariano.personasycoches.repository.automovil.AutomovilRepository;
 
+import lombok.AllArgsConstructor;
+
 @Component
+@AllArgsConstructor
 public class PersonaMapperImpl implements PersonaMapper{
-	
-	@Autowired
+
 	private AutomovilMapper autoMapper;
-	@Autowired
 	private TransaccionMapper transMapper;
-	@Autowired
 	private AutomovilRepository autoRepo;
 
 	@Override
@@ -48,8 +47,7 @@ public class PersonaMapperImpl implements PersonaMapper{
 		return new PersonaCreatedDto(
 				persona.getId(),
 				persona.getNombre(),
-				persona.getApellido(),
-				(persona.getAutomovil() == null)?true:false);
+				persona.getApellido());
 	}
 
 	@Override

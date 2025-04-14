@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mariano.personasycoches.domain.Transaccion;
 import com.mariano.personasycoches.dto.transaccion.TransaccionCreateDto;
 import com.mariano.personasycoches.dto.transaccion.TransaccionDto;
 import com.mariano.personasycoches.mapper.transaccion.TransaccionMapper;
@@ -32,12 +31,12 @@ public class TransaccionController {
 	@PostMapping("/api/v1/transaccion")
 	public ResponseEntity<?> adquireVehicle(
 			@RequestBody TransaccionCreateDto transaccionCreateDto){
-		Optional<Transaccion> newTransaccion = transaccionServ.createTransaccion(transaccionCreateDto);
-		Optional<TransaccionDto> transaccionMade = Optional.of(transaccionMapper.transaccionToTransaccionDto(newTransaccion.get()));
-		personaService.addTransaccion(transaccionCreateDto.personaId(), newTransaccion.get().getId());
+		Optional<TransaccionDto> newTransaccion = transaccionServ.createTransaccion(transaccionCreateDto);
+		personaService.addAutomovil(transaccionCreateDto.personaId(), transaccionCreateDto.patente());
+		personaService.addTransaccion(transaccionCreateDto.personaId(), newTransaccion.get().id());
 		return ResponseEntity
 				.status(HttpStatus.OK)
-				.body(transaccionMade.get());
+				.body(newTransaccion.get());
 	}
 
 }
